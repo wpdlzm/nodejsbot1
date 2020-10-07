@@ -42,25 +42,23 @@ client.on('message', (message) => {
         .setFooter('Made by KADE')
 
     message.channel.send(embed)
-  } else if(message.content('!출근')) {
-    if(checkPermission(message)) return
-      let embed = new Discord.RichEmbed()
-        .setAuthor('출근합니다. 문의주세요!')
-        .setColor('#186de6')
-        .setFooter('Made by KADE')
-        .setTimestamp()
+  } else if(message.content == '!출근') {
+    let embed = new Discord.RichEmbed()
+      .setTitle('출근합니다')
+      .addField('------------', '문의 받습니다')
+      .setTimestamp()
+      .setFooter('Made by KADE')
+
+  message.channel.send(embed)
   
-      embed.addField(contents);
-  
-  } else if(message.content('!퇴근')) {
-    if(checkPermission(message)) return
-      let embed = new Discord.RichEmbed()
-        .setAuthor('퇴근합니다. 문의는 내일주세요!')
-        .setColor('#186de6')
-        .setFooter('Made by KADE')
-        .setTimestamp()
-  
-      embed.addField(contents);
+  } else if(message.content == '!퇴근') {
+    let embed = new Discord.RichEmbed()
+      .setTitle('퇴근합니다')
+      .addField('------------', '문의는 내일 받겠습니다')
+      .setTimestamp()
+      .setFooter('Made by KADE')
+
+  message.channel.send(embed)
   
   } else if(message.content.startsWith('!전체공지')) {
     if(checkPermission(message)) return
