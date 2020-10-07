@@ -55,7 +55,7 @@ client.on('message', (message) => {
 
     message.channel.send(embed)
   
-  } else if(message.content.startsWith('!전체공지2')) {
+  } else if(message.content.startsWith('!전체공지')) {
     if(checkPermission(message)) return
     if(message.member != null) { // 채널에서 공지 쓸 때
       let contents = message.content.slice('!전체공지'.length);
@@ -65,7 +65,7 @@ client.on('message', (message) => {
         .setFooter('Made by KADE')
         .setTimestamp()
   
-      embed.addField('공지: ', contents);
+      embed.addField(contents);
   
       message.member.guild.members.array().forEach(x => {
         if(x.user.bot) return;
