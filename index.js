@@ -42,7 +42,7 @@ client.on('message', (message) => {
         .setFooter('Made by KADE')
 
     message.channel.send(embed)
-  } else if(message.content.startsWith('!출근')) {
+  } else if(message.content('!출근')) {
     if(checkPermission(message)) return
       let embed = new Discord.RichEmbed()
         .setAuthor('출근합니다. 문의주세요!')
@@ -52,7 +52,7 @@ client.on('message', (message) => {
   
       embed.addField(contents);
   
-  } else if(message.content.startsWith('!퇴근')) {
+  } else if(message.content('!퇴근')) {
     if(checkPermission(message)) return
       let embed = new Discord.RichEmbed()
         .setAuthor('퇴근합니다. 문의는 내일주세요!')
