@@ -42,16 +42,21 @@ client.on('message', (message) => {
       .setFooter('Made by KADE')
 
     message.channel.send(embed)
-  } else if(message.content == '!@##ㄴㅇㄴㅇ53') {
-    let embed = new Discord.RichEmbed()
-      .setTitle('KADE 패치노트')
-      
-    
-    commandList.forEach(x => {
-      commandStr += `• \`\`${changeCommandStringLength(`${x.name}`)}\`\` : **${x.desc}**\n`;
-    });
+  } else if(message.content == '!출근') {
+      let embed = new Discord.RichEmbed()
+        .setTitle('KADE 출근')
+        .addField('------------', '출근합니다')
+        .setTimestamp()
+        .setFooter('Made by KADE')
 
-    embed.addField('Commands: ', commandStr);
+    message.channel.send(embed)
+  
+  } else if(message.content == '!퇴근') {
+      let embed = new Discord.RichEmbed()
+        .setTitle('KADE 퇴근')
+        .addField('------------', '퇴근합니다')
+        .setTimestamp()
+        .setFooter('Made by KADE')
 
     message.channel.send(embed)
   
