@@ -37,28 +37,11 @@ client.on('message', (message) => {
   if(message.content == '!케이드') {
       let embed = new Discord.RichEmbed()
         .setTitle('KADE 구동현황')
-        .addField('------------', ':white_check_mark:')
+        .addField(':white_check_mark:')
         .setTimestamp()
         .setFooter('Made by KADE')
 
     message.channel.send(embed)
-  } else if(message.content == '!출근') {
-    let embed = new Discord.RichEmbed()
-      .setTitle('출근합니다')
-      .addField('------------', '문의 받습니다')
-      .setTimestamp()
-      .setFooter('Made by KADE')
-
-  message.channel.send(embed)
-  
-  } else if(message.content == '!퇴근') {
-    let embed = new Discord.RichEmbed()
-      .setTitle('퇴근합니다')
-      .addField('------------', '문의는 내일 받겠습니다')
-      .setTimestamp()
-      .setFooter('Made by KADE')
-
-  message.channel.send(embed)
   
   } else if(message.content.startsWith('!전체공지')) {
     if(checkPermission(message)) return
@@ -66,7 +49,7 @@ client.on('message', (message) => {
       let contents = message.content.slice('!전체공지'.length);
       let embed = new Discord.RichEmbed()
         .setAuthor('KADE 커뮤니티')
-        .setColor('#186de6')
+        .setColor('#ffe500')
         .setFooter('Made by KADE')
         .setTimestamp()
   
@@ -128,7 +111,7 @@ client.on('message', (message) => {
     } else {
       message.channel.bulkDelete(parseInt(clearLine)+1)
         .then(() => {
-          AutoMsgDelete(message, `<@${message.author.id}> ` + parseInt(clearLine) + "개의 메시지를 삭제했습니다. (이 메세지는 잠시 후에 사라집니다.)");
+          AutoMsgDelete(message, `<@${message.author.id}> ` + parseInt(clearLine) + "개의 메시지를 삭제했습니다.");
         })
         .catch(console.error)
     }
